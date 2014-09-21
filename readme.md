@@ -35,10 +35,11 @@ In Step 5, I needed to compute an average for each measured variable, by activit
 
 I found that the most effective method for me was to use a "for" loop to process each subject's data independently.  I subsetted out the data for each subject, melted the resulting data frame to make it easier to process, used ddply to compute the average for each activity/variable pairing, and then used dcast to reshape the data frame into the desired tidy form (6 rows by 81 columns). One wrinkle I encountered was that the dcast dropped off the SubjectNumber column.  I then used rbind to add the data to the output data frame, reattaching a column for Subject Number in the process. 
 
-The last step was to write the data frame, and I chose to call it "tidydata.txt".  I used a standard write.table command. To read the file, copy it to your working directory and use the command
+The last step was to write the data frame, and I chose to call it "tidydata.txt".  I used a standard write.table command. To read the file, copy it to your working directory and use the commands
 
 
   tidydata <- read.table("tidydata.txt", header=TRUE)
+  
   view(tidydata)
 
 References: many thanks to David Hood for posting his "David's Project FAQ" in the Discussion forum.  
