@@ -61,6 +61,8 @@ for (s in 1:30) {
   #Add back the SubjectNumber, then rbind it to the output data frame Final_Data.
 Final_Data <- rbind(Final_Data, cbind(temp$SubjectNumber[1],tempdone))
 }
+#One final little fix to the first column name, wwhicch was messed up by the Cbind.
+colnames(Final_Data)[1] <- "SubjectNumber"
 
 #Write the tidy dataset Final_Data.
 destURL <- "tidydata.txt"
